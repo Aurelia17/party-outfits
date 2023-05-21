@@ -17,12 +17,25 @@ class OutfitsController < ApplicationController
   def create
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
+    authorize @outfit
     @outfit.save
     if @outfit.save
       redirect_to outfit_path(@outfit)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit; end
+
+  def update
+    @outfit = Outfit.update(outfit_params)
+    redirect_to outfit_path(@outfit)
+  end
+
+  def destroy
+    @outfit.destroy
+    redirect_to outfits_path, status: :see_other
   end
 
   private
@@ -33,5 +46,6 @@ class OutfitsController < ApplicationController
 
   def set_outfit
     @outfit = Outfit.find(params[:id])
+    authorize @outfit
   end
 end

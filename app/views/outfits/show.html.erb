@@ -25,6 +25,16 @@
             Rs <%= @outfit.price_per_day %> /Day
           </p>
         </div>
+        <div class="d-flex my-4">
+          <% if policy(@outfit).edit? %>
+            <%= link_to 'edit', edit_outfit_path, class: "btn btn-outline-primary"%>
+          <% end %>
+          <div class="ms-4"></div>
+            <% if policy(@outfit).destroy? %>
+              <%= link_to "delete", outfit_path(@outfit), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this outfit?" } %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
 
