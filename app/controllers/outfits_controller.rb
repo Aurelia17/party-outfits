@@ -3,7 +3,7 @@ class OutfitsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @outfits = Outfit.all
+    @outfits = policy_scope(Outfit)
   end
 
   def show
