@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);">
+  <div class="container">
+    <h1>Rent any kind of outfit for your event!</h1>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row">
+    <% @outfits.each do |outfit| %>
+      <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
+      <div class="card" style="width: 18rem;">
+        <% if outfit.photo.attached? %>
+        <%= cl_image_tag outfit.photo.key, height: 300, width: 150, crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= outfit.title %></h5>
+          <p class="card-text"><%= outfit.description %></p>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
