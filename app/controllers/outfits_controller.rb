@@ -8,6 +8,7 @@ class OutfitsController < ApplicationController
 
   def show
     @user = User.new
+    @booking = Booking.new
   end
 
   def new

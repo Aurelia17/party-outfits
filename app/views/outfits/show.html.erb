@@ -35,8 +35,17 @@
             <% end %>
           </div>
         </div>
+          <div class="col-4">
+            <div class="flat-show-card">
+              <h5>Book this outfit!</h5>
+              <%= simple_form_for([@outfit, @booking]) do |f| %>
+                <%= f.input :start_time , label: 'From :' , html5: true %>
+                <%= f.input :end_time , label: 'To :' , html5: true %>
+                <%= f.input :total_price %>
+                <%= f.submit class: "btn btn-primary"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-</div>
