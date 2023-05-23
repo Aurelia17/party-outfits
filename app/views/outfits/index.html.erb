@@ -5,12 +5,12 @@
 </div>
 
 <div class="container py-5">
-  <div class="row">
+  <div class="cards">
     <% @outfits.each do |outfit| %>
       <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
       <div class="card" style="width: 18rem;">
         <% if outfit.photo.attached? %>
-        <%= cl_image_tag outfit.photo.key, height: 300, width: 150, crop: :fill %>
+        <%= cl_image_tag outfit.photo.key, height: 300, width: 150, crop: :fill, class:"cards-img"%>
         <div class="card-body">
           <h5 class="card-title"><%= outfit.title %></h5>
           <p class="card-text"><%= outfit.description %></p>

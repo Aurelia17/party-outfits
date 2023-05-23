@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-  before_action :set_outfit, only: %i[show edit destroy]
+  before_action :set_outfit, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
@@ -19,7 +19,6 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
     authorize @outfit
-    @outfit.save
     if @outfit.save
       redirect_to outfit_path(@outfit)
     else
@@ -30,8 +29,12 @@ class OutfitsController < ApplicationController
   def edit; end
 
   def update
-    @outfit = Outfit.update(outfit_params)
-    redirect_to outfit_path(@outfit)
+    authorize @outfit
+    if @outfit.update(outfit_params)
+      redirect_to outfit_path(@outfit)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
