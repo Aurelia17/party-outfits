@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_outfit, only: %i[new create]
 
   def index
+    authorize @booking
     @bookings = Booking.all
   end
 
@@ -12,11 +13,10 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.outfit = @outfit
-    @booking.save
+    @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to outfit_path(@outfit)
-    else
-      render :show, status: :unprocessable_entity
     end
   end
 
