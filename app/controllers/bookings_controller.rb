@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_outfit, only: %i[new create]
 
   def index
-    authorize @booking
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
+    @user = current_user
   end
 
   def new

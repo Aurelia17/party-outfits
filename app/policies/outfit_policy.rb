@@ -5,7 +5,7 @@ class OutfitPolicy < ApplicationPolicy
   end
 
   def create?
-    user.is_owner == true
+    true
   end
 
   def update?
