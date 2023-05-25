@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to outfit_path(@outfit)
+      redirect_to bookings_path(@booking)
     end
   end
 
