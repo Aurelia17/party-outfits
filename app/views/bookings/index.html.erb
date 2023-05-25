@@ -8,12 +8,19 @@
   <div class="cards">
       <% @bookings.each do |booking| %>
         <% if @user.id == booking.user_id %>
-          <div class="card" style="width: 18rem;">
+          <div class="card">
+            <% if booking.outfit.photo.attached? %>
+            <%= cl_image_tag booking.outfit.photo.key, crop: :fill,  class:"cards-img"%>
             <div class="card-body">
-              <h5 class="card-title"><%= booking.start_time %></h5>
-              <h5 class="card-title"><%= booking.end_time %></h5>
-              <h5 class="card-title"><%= booking.total_price %> MUR</h5>
+              <h5 class="card-title"><%= booking.outfit.title %></h5>
+
+              <div class="card-center">
+                <p class="card-text">From : <%= booking.start_time %></p>
+                <p class="card-text">To : <%= booking.end_time %></p>
+                <p class="card-text">Total Price :Rs <%= booking.total_price %></p>
+              </div>
             </div>
+            <% end %>
           </div>
         <% end %>
       <% end %>
