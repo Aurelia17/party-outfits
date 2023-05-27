@@ -17,7 +17,7 @@
 }
 
 .card-body {
-  height: 150px;
+  height: 100px;
 
 
 
@@ -34,7 +34,6 @@ p.card-text{
   color: #6d6d6d;
   text-align: justify;
   font-weight: 400;
-  align-items: center;
 
 
 
@@ -42,22 +41,15 @@ p.card-text{
 
 }
 
-.card-center {
 
-  padding-top: 10px ;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-
-
-}
 .card-title {
-
-  padding: 10px;
   font-family: 'Jost';font-size: 20px;
   font-weight: 600;
   color: #212121;
 
+}
+
+.card-center {
+  display: flex;
+  flex-direction: column;
 }
