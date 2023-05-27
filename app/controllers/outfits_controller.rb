@@ -3,11 +3,10 @@ class OutfitsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @outfits = policy_scope(Outfit)
+    @outfits = Outfit.all
   end
 
   def show
-    @user = User.new
     @booking = Booking.new
   end
 
@@ -18,7 +17,6 @@ class OutfitsController < ApplicationController
   def create
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
-    authorize @outfit
     if @outfit.save
       redirect_to outfit_path(@outfit)
     else
@@ -29,7 +27,6 @@ class OutfitsController < ApplicationController
   def edit; end
 
   def update
-    authorize @outfit
     if @outfit.update(outfit_params)
       redirect_to outfit_path(@outfit)
     else
@@ -50,6 +47,5 @@ class OutfitsController < ApplicationController
 
   def set_outfit
     @outfit = Outfit.find(params[:id])
-    authorize @outfit
   end
 end

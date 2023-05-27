@@ -1,5 +1,4 @@
 class BookingPolicy < ApplicationPolicy
-
   def create?
     true
   end
@@ -9,7 +8,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    # METTRE QUE LE PROPRIETAIRE (outift.user) peut supprimer
+    true
   end
 
   class Scope < Scope
