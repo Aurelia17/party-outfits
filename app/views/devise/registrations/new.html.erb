@@ -21,6 +21,7 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :is_owner, label: 'Do you want to rent out?', collection: [[true, 'yes'], [false, 'no']], label_method: :second, value_method: :first, include_blank: false %>
+            <%= f.input :photo, as: :file, label: 'Profile picture' %>
             <%= f.button :submit , 'Sign up', class: "btn btn-primary" %>
           </div>
           <div class="mt-2 mb-4">

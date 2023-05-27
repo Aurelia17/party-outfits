@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_outfit, only: %i[new create]
+  before_action :set_outfit, only: %i[new create destroy]
 
   def index
-    @bookings = policy_scope(Booking)
+    @bookings = Booking.all
     @user = current_user
   end
 
@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.outfit = @outfit
     @booking.user = current_user
-    authorize @booking
     if @booking.save
       redirect_to bookings_path(@booking)
     end
@@ -23,7 +22,12 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to outfit_path(@booking.outfit), status: :see_other
+    redirect_to owner_path(@booking), status: :see_other
+  end
+
+  def owner
+    @bookings = Booking.all
+    @user = current_user
   end
 
   private
