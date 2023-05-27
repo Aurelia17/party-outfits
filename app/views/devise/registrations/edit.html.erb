@@ -11,7 +11,7 @@
             <%= f.input :last_name, required: true %>
             <%= f.input :is_owner, label: 'Do you want to rent out?', collection: [['false', 'no'], ['true', 'yes']], label_method: :second, value_method: :first%>
             <%= f.input :email, required: true, autofocus: true %>
-            <%= f.input :photo, as: :file, label: 'Profile picture' %>
+            <%= f.input :avatar, as: :file, label: 'Profile picture' %>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
