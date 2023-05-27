@@ -15,12 +15,6 @@
 
 }
 
-.card-body {
-  height: 100px;
-
-
-
-}
 p.card-text{
   position: relative;
   align-items: center;
@@ -51,4 +45,8 @@ p.card-text{
 .card-center {
   display: flex;
   flex-direction: column;
+}
+
+.cards {
+  height: 100px;
 }
