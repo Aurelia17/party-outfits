@@ -21,10 +21,8 @@ outfit1.photo.attach(io: file1, filename: 'Gala dress', content_type: 'image/png
 
 file2 = URI.open('https://images.asos-media.com/groups/topman-skinny-tuxedo-suit-in-black/117321-group-1?$n_240w$&wid=40&fit=constrain 40w,https://images.asos-media.com/groups/topman-skinny-tuxedo-suit-in-black/117321-group-1?$n_240w$&wid=75&fit=constrain 75w,https://images.asos-media.com/groups/topman-skinny-tuxedo-suit-in-black/117321-group-1?$n_240w$&wid=120&fit=constrain 120w,https://images.asos-media.com/groups/topman-skinny-tuxedo-suit-in-black/117321-group-1?$n_240w$&wid=168&fit=constrain 168w,https://images.asos-media.com/groups/topman-skinny-tuxedo-suit-in-black/117321-group-1?$n_320w$&wid=317&fit=constrain 317w')
 outfit2 = Outfit.create(title: 'Black Tuxedo',
-                        description: 'Our navy stretch blazer is crafted from a performance fabric blend that is
-                        extremely stretchy while still providing an incredibly professional appearance. They are
-                        lined with our dress shirt fabric making them lightweight, breathable and moisture-wicking.
-                         It also features our signature athletic fit that rewards those with an athletic physique.',
+                        description: 'Classic tuxedo suit. Black silk and virgin wool blend classic tuxedo suit from
+                        Giorgio Armani. Made in Italy',
                         category: 'FORMAL-OUTFIT',
                         size: 'L',
                         price_per_day: 400,
