@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[index destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "owner", to: "bookings#owner"
+  get "owner", to: "outfits#change"
+  get "owner/bookings", to: "bookings#owner"
+  get "owner/outfits", to: "outfits#owner"
   # Defines the root path route ("/")
   # root "articles#index"
 end

@@ -43,6 +43,11 @@ class OutfitsController < ApplicationController
     redirect_to outfits_path, status: :see_other
   end
 
+  def owner
+    @user = current_user
+    @outfits = Outfit.all
+  end
+
   private
 
   def outfit_params
