@@ -2,9 +2,19 @@
   <div class="container">
     <h1>Rent any kind of outfit for your event!</h1>
   </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-5">
+      <%= form_with url: outfits_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "What are you looking for?"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-burgendy" %>
+    <% end %>
+    </div>
+  </div>
 </div>
-
-
 
 <div class="container py-5">
   <div class="cards">

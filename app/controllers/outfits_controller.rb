@@ -3,7 +3,11 @@ class OutfitsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @outfits = Outfit.all
+    if params[:query].present?
+      @outfits = Outfit.search_by_title_description_category(params[:query])
+    else
+      @outfits = Outfit.all
+    end
   end
 
   def show
