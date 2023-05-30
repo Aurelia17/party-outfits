@@ -27,8 +27,14 @@
           <h5 class="card-title"><%= outfit.title %></h5>
 
           <div class="card-center">
-            <span class="card-text"><%= outfit.size %></span>
-            <span class="card-text">Rs <%= outfit.price_per_day %>/day</span>
+            <p class="card-text">
+              <i class="fa-solid fa-ruler-vertical"></i>
+              Size : <%= outfit.size %>
+            </p>
+            <p class="card-text">
+              <i class="fa-solid fa-money-bill"></i>
+              Rs <%= outfit.price_per_day %> /Day
+            </p>
           </div>
         </div>
         <% end %>

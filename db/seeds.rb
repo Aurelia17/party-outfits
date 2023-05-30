@@ -13,7 +13,7 @@ outfit1 = Outfit.create(title: 'Embroidered Wedding Dress',
                         category: 'WEDDING',
                         size: 'L',
                         price_per_day: 2000,
-                        user: User.last
+                        user: User.first
                         )
 outfit1.photo.attach(io: file1, filename: 'embroided-wedding-dress', content_type: 'image/png')
 
@@ -26,7 +26,7 @@ outfit2 = Outfit.create(title: 'Embellished Corset Wedding Dress',
                         category: 'WEDDING',
                         size: 'S',
                         price_per_day: 2500,
-                        user: User.last
+                        user: User.first
                       )
 outfit2.photo.attach(io: file2, filename: 'corset-wedding-dress', content_type: 'image/png')
 
@@ -39,7 +39,7 @@ outfit3 = Outfit.create(title: 'Beaded Wedding Dress',
                         category: 'WEDDING',
                         size: 'M',
                         price_per_day: 2250,
-                        user: User.last
+                        user: User.first
                       )
 outfit3.photo.attach(io: file3, filename: 'beaded-wedding-dress', content_type: 'image/png')
 
@@ -54,7 +54,7 @@ outfit4 = Outfit.create(title: "Blouson Wedding Dress",
                         category: 'WEDDING',
                         size: 'XL',
                         price_per_day: 1750,
-                        user: User.last
+                        user: User.first
                         )
 outfit4.photo.attach(io: file4, filename: 'blouson-wedding-dress', content_type: 'image/png')
 
@@ -68,7 +68,7 @@ outfit5 = Outfit.create(title: "Sculpted Off Shoulder Wedding Dress",
                         category: 'WEDDING',
                         size: 'XS',
                         price_per_day: 2750,
-                        user: User.last
+                        user: User.first
                         )
 outfit5.photo.attach(io: file5, filename: 'off-shoulder-wedding-dress', content_type: 'image/png')
 
