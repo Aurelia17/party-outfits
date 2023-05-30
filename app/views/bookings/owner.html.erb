@@ -14,9 +14,18 @@
               <h5 class="card-title"><%= booking.outfit.title %></h5>
 
               <div class="card-center">
-                <p class="card-text">From : <%= booking.start_time %></p>
-                <p class="card-text">To : <%= booking.end_time %></p>
-                <p class="card-text">Total Price :Rs <%= booking.total_price %></p>
+                <p class="card-text">
+                  <i class="fa-regular fa-calendar"></i>
+                  From : <%= booking.start_time %>
+                </p>
+                  <p class="card-text">
+                  <i class="fa-solid fa-calendar"></i>
+                    To : <%= booking.end_time %>
+                </p>
+                <p class="card-text">
+                  <i class="fa-solid fa-money-bill"></i>
+                    Total Price :Rs  <%= booking.total_price %>
+                </p>
                 <%= link_to "Cancel Booking", owner_path(@booking), class: "btn btn-outline-danger", data: { turbo_method: :destroy, turbo_confirm: "Are you sure you want to delete this booking?" } %>
               </div>
             </div>
