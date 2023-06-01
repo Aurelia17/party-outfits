@@ -13,4 +13,12 @@ export default class extends Controller {
     const total= parseInt(this.priceValue) * difDate;
     this.totalpriceTarget.value = total;
   }
+  setValue(event) {
+    event.preventDefault()
+    const startDate= Date.parse(this.startTarget.value);
+    const endDate= Date.parse(this.endTarget.value);
+    const difDate= (endDate - startDate) / 60000 / 24 / 60
+    const total= parseInt(this.priceValue) * difDate;
+    this.totalpriceTarget.value = total
+  }
 }
