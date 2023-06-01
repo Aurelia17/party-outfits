@@ -40,8 +40,15 @@
                 <%= simple_form_for([@outfit, @booking]) do |f| %>
                   <%= f.input :start_time , label: 'From :' , html5: true, input_html: {data: {form_calculate_target: "start", action: "change->form-calculate#test"}} %>
                   <%= f.input :end_time , label: 'To :' , html5: true, input_html: {data: {form_calculate_target: "end", action: "change->form-calculate#test"}} %>
-                  <%= f.input :total_price, input_html: {disabled: :true, data: {form_calculate_target: "totalprice"}}  %>
-                  <%= f.submit class: "btn btn-primary"%>
+                  <%= f.input :total_price, input_html: {data: {form_calculate_target: "totalprice"}}  %>
+                  <%# <div>
+                    <span>
+                      Total Price :
+                      <span id="target-value">
+                      </span>
+                    </span>
+                  </div> %>
+                  <%= f.submit data: {action: "submit->form-calculate#setValue"}, class: "btn btn-primary"%>
                 <% end %>
               </div>
             </div>
