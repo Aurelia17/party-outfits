@@ -5,6 +5,9 @@
 </div>
 
 <div class="container py-5">
+  <div>
+    <p>Note that if you cancel your booking, you will not be refunded.</p>
+  </div>
   <div class="cards">
     <% @bookings.each do |booking| %>
       <% if @user.id == booking.user_id %>
@@ -26,7 +29,7 @@
                 <i class="fa-solid fa-money-bill"></i>
                    Total Price :Rs  <%= booking.total_price %>
               </p>
-              <%= link_to "Cancel Booking", bookings_path(@booking), class: "btn btn-outline-danger", data: { turbo_method: :destroy, turbo_confirm: "Are you sure you want to delete this outfit?" } %>
+              <%= link_to "Cancel Booking", booking_path(@booking), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this outfit?" } %>
             </div>
           </div>
           <% end %>
@@ -35,5 +38,3 @@
     <% end %>
   </div>
 </div>
-
-<div><p>Note that if you cancel your booking, you will not be refunded.</p></div>
