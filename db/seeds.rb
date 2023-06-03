@@ -2,8 +2,27 @@ require "open-uri"
 
 Booking.destroy_all
 Outfit.destroy_all
+User.destroy_all
 
 puts "Starting seeding"
+
+user1 = User.new(
+  email: 'user@domain.com',
+  password: '123456789',
+  password_confirmation: '123456789'
+)
+user1.save!
+
+puts "User 1 created !"
+
+user2 = User.new(
+  email: 'test@test.com',
+  password: '123456',
+  password_confirmation: '123456'
+)
+user2.save!
+
+puts "User 2 created !"
 
 file1 = URI.open('https://www.lakazart.com/wp-content/uploads/2023/05/ivory-wedding-dress-2.jpeg')
 outfit1 = Outfit.create(title: 'Embroidered Wedding Dress',
