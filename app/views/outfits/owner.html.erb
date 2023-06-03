@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/313715/pexels-photo-313715.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
   <div class="container">
     <h1>My outfits</h1>
   </div>
@@ -7,8 +7,8 @@
 <div class="container py-5">
   <div class="cards">
     <% @outfits.each do |outfit| %>
-      <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
       <div class="card">
+      <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
         <% if @user.id == outfit.user_id %>
         <%= cl_image_tag outfit.photo.key, crop: :fill,  class:"cards-img"%>
         <div class="card-body">
